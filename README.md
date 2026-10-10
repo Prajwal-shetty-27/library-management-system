@@ -1,395 +1,194 @@
-\# Library Management System
+# Library Management System
 
+A library management system built with **Python**, **Django**, and **Django REST Framework**. It lets librarians manage books and members, issue and return books, and exposes the same functionality through a secured REST API.
 
+## Features
 
-A Library Management System built using Python and Django. The project allows users to manage books, members, borrowing and returning of books, authentication, and REST APIs.
+- User login and logout
+- Dashboard with library statistics
+- Add, edit, delete, and search books
+- Add, edit, and delete members
+- Issue books to members and process returns
+- Track borrowed and returned books
+- Automatic book availability updates
+- Form validation (duplicate ISBN, duplicate member email, phone number format)
+- REST API with authentication and permissions
+- Full CRUD through the API
 
+## Tech Stack
 
+| Layer     | Technology                      |
+| --------- | ------------------------------- |
+| Language  | Python                          |
+| Framework | Django, Django REST Framework   |
+| Database  | SQLite                          |
+| Frontend  | HTML, CSS (Django templates)    |
+| Tools     | Git, GitHub                     |
 
-\## Features
-
-
-
-\- User Login and Logout
-
-\- Dashboard with library statistics
-
-\- Add, Edit, and Delete Books
-
-\- Search Books
-
-\- Add, Edit, and Delete Members
-
-\- Issue Books to Members
-
-\- Return Books
-
-\- Track Borrowed and Returned Books
-
-\- Book availability management
-
-\- Form validation
-
-\- Django REST Framework APIs
-
-\- API authentication and permissions
-
-\- CRUD operations through REST APIs
-
-
-
-\## Technologies Used
-
-
-
-\- Python
-
-\- Django
-
-\- Django REST Framework
-
-\- SQLite
-
-\- HTML
-
-\- CSS
-
-\- Git
-
-\- GitHub
-
-
-
-\## Project Structure
-
-
-
-```text
-
-library\_management\_system/
-
-│
-
-├── config/
-
-│   ├── settings.py
-
-│   ├── urls.py
-
-│   ├── asgi.py
-
-│   └── wsgi.py
-
-│
-
-├── library/
-
-│   ├── migrations/
-
-│   ├── templates/
-
-│   ├── static/
-
-│   ├── admin.py
-
-│   ├── forms.py
-
-│   ├── models.py
-
-│   ├── serializers.py
-
-│   ├── urls.py
-
-│   └── views.py
-
-│
-
-├── manage.py
-
-├── .gitignore
-
-└── README.md
-
+## Project Structure
 
 ```
+library-management-system/
+├── config/                 # Project settings and root URL configuration
+│   ├── settings.py
+│   ├── urls.py
+│   ├── asgi.py
+│   └── wsgi.py
+├── library/                # Main application
+│   ├── migrations/
+│   ├── templates/
+│   ├── static/
+│   ├── admin.py
+│   ├── forms.py
+│   ├── models.py
+│   ├── serializers.py
+│   ├── urls.py
+│   └── views.py
+├── manage.py
+├── requirements.txt
+├── .gitignore
+└── README.md
+```
+
+## Database Models
+
+**Book**
+- Title
+- Author
+- ISBN
+- Published date
+- Availability
+
+**Member**
+- Name
+- Email
+- Phone
+- Joined date
+
+**Borrow**
+- Member (foreign key)
+- Book (foreign key)
+- Borrowed date
+- Returned date
+
+## REST API
+
+All endpoints require authentication.
+
+### Books
+
+| Method | Endpoint            | Description         |
+| ------ | ------------------- | ------------------- |
+| GET    | `/api/books/`       | List all books      |
+| POST   | `/api/books/`       | Create a book       |
+| GET    | `/api/books/<id>/`  | Retrieve a book     |
+| PUT    | `/api/books/<id>/`  | Update a book       |
+| PATCH  | `/api/books/<id>/`  | Partially update    |
+| DELETE | `/api/books/<id>/`  | Delete a book       |
+
+### Members
+
+| Method | Endpoint              | Description          |
+| ------ | --------------------- | -------------------- |
+| GET    | `/api/members/`       | List all members     |
+| POST   | `/api/members/`       | Create a member      |
+| GET    | `/api/members/<id>/`  | Retrieve a member    |
+| PUT    | `/api/members/<id>/`  | Update a member      |
+| PATCH  | `/api/members/<id>/`  | Partially update     |
+| DELETE | `/api/members/<id>/`  | Delete a member      |
+
+### Borrows
+
+| Method | Endpoint                       | Description              |
+| ------ | ------------------------------ | ------------------------ |
+| GET    | `/api/borrows/`                | List all borrow records  |
+| POST   | `/api/borrows/`                | Issue a book             |
+| GET    | `/api/borrows/<id>/`           | Retrieve a borrow record |
+| PUT    | `/api/borrows/<id>/`           | Update a borrow record   |
+| PATCH  | `/api/borrows/<id>/`           | Partially update         |
+| DELETE | `/api/borrows/<id>/`           | Delete a borrow record   |
+| POST   | `/api/borrows/<id>/return/`    | Return a borrowed book   |
+
+## Getting Started
+
+### Prerequisites
+
+- Python 3.10 or newer
+- Git
+
+### Installation
+
+1. **Clone the repository**
+
+   ```bash
+   git clone https://github.com/Prajwal-shetty-27/library-management-system.git
+   cd library-management-system
+   ```
+
+2. **Create and activate a virtual environment**
+
+   ```bash
+   python -m venv venv
+   ```
 
-Database Models
+   Windows (PowerShell):
+   ```powershell
+   .\venv\Scripts\activate
+   ```
 
-The project contains three main models.
+   macOS / Linux:
+   ```bash
+   source venv/bin/activate
+   ```
 
-Book
+3. **Install dependencies**
 
-Stores information about books:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-\- Title
+4. **Apply migrations**
 
-\- Author
+   ```bash
+   python manage.py migrate
+   ```
 
-\- ISBN
+5. **Create a superuser**
 
-\- Published Date
+   ```bash
+   python manage.py createsuperuser
+   ```
 
-\- Availability
+6. **Run the development server**
 
-Member
+   ```bash
+   python manage.py runserver
+   ```
 
-Stores library member information:
+Open <http://127.0.0.1:8000/> in your browser. The admin panel is at <http://127.0.0.1:8000/admin/>.
 
-\- Name
+## Business Rules
 
-\- Email
+- A book's availability updates automatically when it is issued or returned.
+- An unavailable book cannot be issued.
+- ISBNs and member emails must be unique.
+- Member phone numbers are validated.
+- Borrowing and returning work through both the web interface and the REST API.
 
-\- Phone
+## Key Concepts Demonstrated
 
-\- Joined Date
+- Django MVT architecture
+- Models, ForeignKey relationships, and the ORM
+- ModelForms and form validation
+- Authentication and `login_required` views
+- Django Admin
+- Django REST Framework: serializers, `APIView`, authentication, permissions, status codes
 
-Borrow
+## Notes
 
-Manages book borrowing and returning:
+This project is intended for learning and development use. Before deploying it, set `DEBUG = False`, move `SECRET_KEY` to an environment variable, and configure `ALLOWED_HOSTS`.
 
-\- Member
+## Author
 
-\- Book
-
-\- Borrowed Date
-
-\- Returned Date
-
-REST API
-
-The project provides REST APIs for managing books, members, and borrow records.
-
-Book APIs
-
-GET     /api/books/
-
-POST    /api/books/
-
-
-
-GET     /api/books/<id>/
-
-PUT     /api/books/<id>/
-
-PATCH   /api/books/<id>/
-
-DELETE  /api/books/<id>/
-
-
-
-Member APIs
-
-GET     /api/members/
-
-POST    /api/members/
-
-
-
-GET     /api/members/<id>/
-
-PUT     /api/members/<id>/
-
-PATCH   /api/members/<id>/
-
-DELETE  /api/members/<id>/
-
-
-
-Borrow APIs
-
-GET     /api/borrows/
-
-POST    /api/borrows/
-
-
-
-GET     /api/borrows/<id>/
-
-PUT     /api/borrows/<id>/
-
-PATCH   /api/borrows/<id>/
-
-DELETE  /api/borrows/<id>/
-
-
-
-POST    /api/borrows/<id>/return/
-
-
-
-Authentication
-
-The project uses Django's built-in authentication system for user login and protected functionality.
-
-The REST APIs use Django REST Framework authentication and permissions.
-
-How to Run the Project
-
-1\. Clone the repository
-
-git clone https://github.com/Prajwal-shetty-27/library-management-system.git
-
-
-
-2\. Navigate to the project
-
-cd library-management-system
-
-
-
-3\. Create a virtual environment
-
-python -m venv venv
-
-
-
-4\. Activate the virtual environment
-
-For Windows PowerShell:
-
-.\\venv\\Scripts\\activate
-
-
-
-5\. Install dependencies
-
-pip install django djangorestframework
-
-
-
-6\. Apply migrations
-
-python manage.py migrate
-
-
-
-7\. Create a superuser
-
-python manage.py createsuperuser
-
-
-
-8\. Start the development server
-
-python manage.py runserver
-
-
-
-Open:
-
-http://127.0.0.1:8000/
-
-
-
-Key Django Concepts Used
-
-\- Django MVT architecture
-
-\- Models and ForeignKey relationships
-
-\- Django ORM
-
-\- ModelForms
-
-\- Form validation
-
-\- Authentication
-
-\- Login required views
-
-\- CRUD operations
-
-\- Templates
-
-\- Static files
-
-\- Migrations
-
-\- Django Admin
-
-\- Django REST Framework
-
-\- Serializers
-
-\- APIView
-
-\- API authentication and permissions
-
-\- HTTP methods
-
-\- API status codes
-
-\- Error handling and debugging
-
-Project Highlights
-
-\- Book availability is automatically updated when a book is issued or returned.
-
-\- Users cannot issue an unavailable book.
-
-\- Duplicate ISBN and member email are validated.
-
-\- Member phone numbers are validated.
-
-\- Borrow and return operations are handled through both the web interface and REST APIs.
-
-\- API endpoints are protected using authentication and permissions.
-
-Learning Goals
-
-This project was built to understand practical Django development, including:
-
-\- Building a Django project from scratch
-
-\- Understanding Django project and app structure
-
-\- Working with models and relationships
-
-\- Using the Django ORM
-
-\- Creating and validating forms
-
-\- Implementing authentication
-
-\- Building CRUD functionality
-
-\- Creating REST APIs
-
-\- Using serializers
-
-\- Handling API authentication and permissions
-
-\- Debugging Django errors using traceback
-
-Author
-
-Prajwal
-
-
-
-\### After saving
-
-
-
-Run:
-
-
-
-```powershell
-
-git status
-
-
-
-Then:
-
-git add README.md
-
-git commit -m "Add project README"
-
-git push
-
-
-
-This will update the README on your GitHub repository.
-
+**Prajwal**
+GitHub: [@Prajwal-shetty-27](https://github.com/Prajwal-shetty-27)
