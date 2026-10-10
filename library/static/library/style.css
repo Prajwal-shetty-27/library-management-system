@@ -1,0 +1,2032 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8;
+    color: #333;
+}
+
+/* Navigation */
+
+nav {
+    background-color: #222;
+    color: white;
+    padding: 15px 30px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav h2 {
+    margin: 0;
+} 
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Main content */
+
+main {
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 40px 30px;
+}
+/* Dashboard */
+
+/* =========================
+   Professional Dashboard
+========================= */
+
+.dashboard-header {
+    margin-bottom: 30px;
+}
+
+.dashboard-label {
+    margin: 0 0 8px;
+
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+
+    color: #6b7280;
+}
+
+.dashboard-header h1 {
+    margin: 0 0 8px;
+
+    font-size: 34px;
+    color: #1f2937;
+}
+
+.dashboard-subtitle {
+    margin: 0;
+
+    font-size: 16px;
+    color: #6b7280;
+}
+
+
+/* =========================
+   Statistics Cards
+========================= */
+
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.card {
+    position: relative;
+
+    background: white;
+
+    padding: 24px;
+
+    border-radius: 14px;
+
+    border: 1px solid #e5e7eb;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.10);
+}
+
+
+.card-icon {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background: #f1f5f9;
+
+    font-size: 22px;
+}
+
+
+.card-content h2 {
+    margin: 0 0 6px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    color: #6b7280;
+}
+
+
+.card-content p {
+    margin: 0;
+
+    font-size: 32px;
+    font-weight: bold;
+
+    color: #111827;
+}
+
+
+.card-content span {
+    display: block;
+
+    margin-top: 5px;
+
+    font-size: 12px;
+
+    color: #9ca3af;
+}
+
+
+/* =========================
+   Quick Actions
+========================= */
+
+.quick-actions {
+    margin-top: 40px;
+}
+
+.section-heading {
+    margin-bottom: 18px;
+}
+
+.section-heading h2 {
+    margin: 0 0 5px;
+
+    font-size: 22px;
+
+    color: #1f2937;
+}
+
+.section-heading p {
+    margin: 0;
+
+    font-size: 14px;
+
+    color: #6b7280;
+}
+
+.action-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    width: 100%;
+}
+
+
+.action-card {
+    background: white;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+
+    padding: 20px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 16px;
+
+    min-height: 90px;
+
+    text-decoration: none;
+    color: inherit;
+
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.action-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+
+.action-icon {
+    width: 44px;
+    height: 44px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 10px;
+
+    background: #f1f5f9;
+
+    font-size: 20px;
+}
+
+
+.action-card h3 {
+    margin: 0 0 5px;
+
+    font-size: 16px;
+
+    color: #1f2937;
+}
+
+
+.action-card p {
+    margin: 0;
+
+    font-size: 13px;
+
+    color: #6b7280;
+}
+
+
+.action-arrow {
+    margin-left: auto;
+
+    font-size: 20px;
+
+    color: #6b7280;
+}
+
+/* Books Page */
+
+.book-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 25px;
+}
+
+.book-card {
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.book-card h2 {
+    margin-top: 0;
+}
+
+.book-card p {
+    margin: 10px 0;
+}
+
+/* Buttons */
+
+.btn {
+    display: inline-block;
+    background-color: #222;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 10px;
+    margin-right: 5px;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+.delete-btn {
+    background-color: #b00020;
+}
+
+/* Search */
+
+.search-form {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.search-form input {
+    padding: 10px;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.search-form button {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Members Page */
+
+.member-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 25px;
+}
+
+.member-card {
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.member-card h2 {
+    margin-top: 0;
+}
+
+.member-card p {
+    margin: 10px 0;
+}
+
+/* Borrowed Books */
+
+.borrow-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 25px;
+}
+
+.borrow-card {
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.borrow-card h2 {
+    margin-top: 0;
+}
+
+.borrow-card p {
+    margin: 10px 0;
+}
+
+.status-borrowed {
+    font-weight: bold;
+}
+
+.status-returned {
+    font-weight: bold;
+}
+
+/* Forms */
+
+.form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-container h1 {
+    margin-top: 0;
+}
+
+.form-container input[type="text"],
+.form-container input[type="email"],
+.form-container input[type="date"],
+.form-container input[type="number"],
+.form-container select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-container input[type="checkbox"] {
+    width: auto;
+    margin-right: 8px;
+}
+
+.form-container button {
+    border: none;
+    cursor: pointer;
+}
+
+/* Login */
+
+.login-container {
+    max-width: 400px;
+    margin: 80px auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.login-container h1 {
+    text-align: center;
+    margin-top: 0;
+}
+
+.login-container input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.login-container button {
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+/* Responsive Design */
+
+@media (max-width: 900px) {
+
+    .dashboard,
+    .book-list,
+    .member-list,
+    .borrow-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .action-grid {
+        grid-template-columns: 1fr;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .dashboard,
+    .book-list,
+    .member-list,
+    .borrow-list {
+        grid-template-columns: 1fr;
+    }
+
+    main {
+        padding: 15px;
+    }
+
+    nav {
+        padding: 15px;
+    }
+
+    nav a {
+        margin-left: 8px;
+    }
+
+    .search-form input {
+        width: 100%;
+    }
+}
+
+/* =========================
+   Dashboard - Quick Actions FIX
+========================= */
+
+.quick-actions {
+    margin-top: 40px;
+}
+
+.quick-actions .section-heading {
+    margin-bottom: 20px;
+}
+
+.quick-actions .action-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    width: 100%;
+}
+
+.quick-actions .action-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    width: 100%;
+    min-height: 100px;
+
+    padding: 20px;
+
+    background-color: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+
+    text-decoration: none;
+    color: #1f2937;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+
+    transition: transform 0.2s ease,
+                box-shadow 0.2s ease,
+                border-color 0.2s ease;
+}
+
+.quick-actions .action-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+
+    border-color: #d1d5db;
+}
+
+.quick-actions .action-icon {
+    width: 46px;
+    height: 46px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background-color: #f1f5f9;
+
+    font-size: 20px;
+}
+
+.quick-actions .action-card h3 {
+    margin: 0 0 5px;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    color: #1f2937;
+}
+
+.quick-actions .action-card p {
+    margin: 0;
+
+    font-size: 13px;
+
+    color: #6b7280;
+}
+
+.quick-actions .action-arrow {
+    margin-left: auto;
+
+    font-size: 22px;
+
+    color: #6b7280;
+}
+
+
+/* =========================
+   Dashboard Statistics FIX
+========================= */
+
+.dashboard .card {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    text-align: left;
+}
+
+.dashboard .card-content {
+    flex: 1;
+}
+
+.dashboard .card-content h2 {
+    text-align: left;
+}
+
+.dashboard .card-content p {
+    text-align: left;
+}
+
+.dashboard .card-content span {
+    text-align: left;
+}
+
+
+/* =========================
+   Responsive Quick Actions
+========================= */
+
+@media (max-width: 900px) {
+
+    .quick-actions .action-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .quick-actions .action-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .quick-actions .action-card {
+        padding: 16px;
+    }
+
+}
+
+/* =========================
+   Professional Books Page
+========================= */
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    margin-bottom: 25px;
+}
+
+.page-label {
+    margin: 0 0 8px;
+
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+
+    color: #6b7280;
+}
+
+.page-header h1 {
+    margin: 0 0 8px;
+
+    font-size: 34px;
+    color: #1f2937;
+}
+
+.page-subtitle {
+    margin: 0;
+
+    font-size: 16px;
+    color: #6b7280;
+}
+
+.add-book-btn {
+    margin-top: 0;
+    margin-right: 0;
+}
+
+
+/* =========================
+   Books Search
+========================= */
+
+.search-form {
+    margin: 0 0 30px;
+}
+
+.search-box {
+    display: flex;
+    gap: 10px;
+
+    max-width: 650px;
+}
+
+.search-box input {
+    flex: 1;
+
+    padding: 12px 15px;
+
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+
+    font-size: 14px;
+
+    background: white;
+
+    outline: none;
+}
+
+.search-box input:focus {
+    border-color: #9ca3af;
+
+    box-shadow: 0 0 0 3px rgba(107, 114, 128, 0.1);
+}
+
+.search-box button {
+    padding: 12px 20px;
+
+    border: none;
+    border-radius: 8px;
+
+    background-color: #222;
+    color: white;
+
+    font-size: 14px;
+
+    cursor: pointer;
+}
+
+.search-box button:hover {
+    opacity: 0.85;
+}
+
+
+/* =========================
+   Book Cards
+========================= */
+
+.book-list {
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 20px;
+
+    margin-top: 0;
+}
+
+.book-card {
+    background: white;
+
+    padding: 24px;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+
+    transition: transform 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+.book-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+}
+
+
+/* Book Header */
+
+.book-card-header {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 14px;
+
+    margin-bottom: 20px;
+}
+
+.book-icon {
+    width: 46px;
+    height: 46px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background-color: #f1f5f9;
+
+    font-size: 20px;
+}
+
+.book-card h2 {
+    margin: 0 0 5px;
+
+    font-size: 20px;
+
+    color: #1f2937;
+}
+
+.book-author {
+    margin: 0;
+
+    font-size: 14px;
+
+    color: #6b7280;
+}
+
+
+/* Book Details */
+
+.book-details {
+    padding: 15px 0;
+
+    border-top: 1px solid #f1f5f9;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.book-details p {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin: 8px 0;
+
+    font-size: 13px;
+
+    color: #6b7280;
+}
+
+.book-details strong {
+    color: #374151;
+}
+
+
+/* Book Status */
+
+.book-status {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.status {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.status.available {
+    color: #15803d;
+}
+
+.status.borrowed {
+    color: #b45309;
+}
+
+
+/* Book Buttons */
+
+.book-actions {
+    display: flex;
+
+    gap: 8px;
+}
+
+.book-actions .btn {
+    margin: 0;
+}
+
+.edit-btn {
+    background-color: #222;
+}
+
+.delete-btn {
+    background-color: #b00020;
+}
+
+
+/* Empty Books */
+
+.empty-books {
+    grid-column: 1 / -1;
+
+    padding: 50px 20px;
+
+    text-align: center;
+
+    background: white;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+}
+
+.empty-icon {
+    font-size: 35px;
+}
+
+.empty-books h2 {
+    margin: 12px 0 5px;
+
+    color: #1f2937;
+}
+
+.empty-books p {
+    margin: 0;
+
+    color: #6b7280;
+}
+
+
+/* =========================
+   Books Page Responsive
+========================= */
+
+@media (max-width: 1000px) {
+
+    .book-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+@media (max-width: 700px) {
+
+    .page-header {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 20px;
+    }
+
+    .book-list {
+        grid-template-columns: 1fr;
+    }
+
+    .search-box {
+        max-width: 100%;
+    }
+
+}
+
+@media (max-width: 500px) {
+
+    .search-box {
+        flex-direction: column;
+    }
+
+    .search-box button {
+        width: 100%;
+    }
+
+}
+
+
+.add-book-btn {
+    margin: 0;
+    white-space: nowrap;
+}
+
+.search-box .add-book-btn {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 42px;
+    padding: 0 18px;
+    white-space: nowrap;
+}
+
+/* =========================
+   Professional Members Page
+========================= */
+
+.member-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 30px;
+}
+
+.member-toolbar p {
+    margin: 0;
+
+    font-size: 14px;
+    color: #6b7280;
+}
+
+.add-member-btn {
+    margin: 0;
+    white-space: nowrap;
+}
+
+
+/* =========================
+   Member Cards
+========================= */
+
+.member-list {
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 20px;
+
+    margin-top: 0;
+}
+
+.member-card {
+    background: white;
+
+    padding: 24px;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+
+    transition: transform 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+.member-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+}
+
+
+/* Member Header */
+
+.member-card-header {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 14px;
+
+    margin-bottom: 20px;
+}
+
+.member-icon {
+    width: 46px;
+    height: 46px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background-color: #f1f5f9;
+
+    font-size: 20px;
+}
+
+.member-card h2 {
+    margin: 0 0 5px;
+
+    font-size: 20px;
+
+    color: #1f2937;
+}
+
+.member-email {
+    margin: 0;
+
+    font-size: 14px;
+
+    color: #6b7280;
+}
+
+
+/* Member Details */
+
+.member-details {
+    padding: 15px 0;
+
+    border-top: 1px solid #f1f5f9;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.member-details p {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin: 8px 0;
+
+    font-size: 13px;
+
+    color: #6b7280;
+}
+
+.member-details strong {
+    color: #374151;
+}
+
+
+/* Member Buttons */
+
+.member-actions {
+    display: flex;
+
+    gap: 8px;
+
+    margin-top: 15px;
+}
+
+.member-actions .btn {
+    margin: 0;
+}
+
+.member-actions .edit-btn {
+    background-color: #222;
+}
+
+.member-actions .delete-btn {
+    background-color: #b00020;
+}
+
+
+/* Empty Members */
+
+.empty-members {
+    grid-column: 1 / -1;
+
+    padding: 50px 20px;
+
+    text-align: center;
+
+    background: white;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+}
+
+.empty-members .empty-icon {
+    font-size: 35px;
+}
+
+.empty-members h2 {
+    margin: 12px 0 5px;
+
+    color: #1f2937;
+}
+
+.empty-members p {
+    margin: 0;
+
+    color: #6b7280;
+}
+
+
+/* =========================
+   Members Responsive
+========================= */
+
+@media (max-width: 1000px) {
+
+    .member-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+@media (max-width: 700px) {
+
+    .member-toolbar {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 15px;
+    }
+
+    .member-list {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+.member-toolbar {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 30px;
+}
+
+.add-member-btn {
+    margin: 0;
+    white-space: nowrap;
+}
+
+/* =========================
+   Members Page Header
+========================= */
+
+.members-header {
+    margin-bottom: 25px;
+}
+
+.members-header .page-label {
+    margin: 0 0 8px;
+
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+
+    color: #6b7280;
+}
+
+.members-header h1 {
+    margin: 0 0 8px;
+
+    font-size: 34px;
+
+    color: #1f2937;
+}
+
+.members-header .page-subtitle {
+    margin: 0;
+
+    font-size: 16px;
+
+    color: #6b7280;
+}
+
+
+/* =========================
+   Member Summary
+========================= */
+
+.member-summary {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 18px 20px;
+
+    margin-bottom: 25px;
+
+    background: white;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 12px;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.member-count {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+.summary-icon {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background-color: #f1f5f9;
+
+    font-size: 20px;
+}
+
+.member-count strong {
+    display: block;
+
+    font-size: 18px;
+
+    color: #1f2937;
+}
+
+.member-count span {
+    display: block;
+
+    margin-top: 2px;
+
+    font-size: 13px;
+
+    color: #6b7280;
+}
+
+.add-member-btn {
+    margin: 0;
+
+    white-space: nowrap;
+}
+
+
+/* =========================
+   Member Cards
+========================= */
+
+.member-list {
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 20px;
+
+    margin-top: 0;
+}
+
+.member-card {
+    background: white;
+
+    padding: 24px;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 14px;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.member-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+}
+
+
+/* Member Header */
+
+.member-card-header {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 14px;
+
+    margin-bottom: 20px;
+}
+
+.member-icon {
+    width: 46px;
+    height: 46px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background-color: #f1f5f9;
+
+    font-size: 20px;
+}
+
+.member-card h2 {
+    margin: 0 0 5px;
+
+    font-size: 20px;
+
+    color: #1f2937;
+}
+
+.member-email {
+    margin: 0;
+
+    font-size: 14px;
+
+    color: #6b7280;
+}
+
+
+/* Member Details */
+
+.member-details {
+    padding: 15px 0;
+
+    border-top: 1px solid #f1f5f9;
+
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.member-details p {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin: 8px 0;
+
+    font-size: 13px;
+
+    color: #6b7280;
+}
+
+.member-details strong {
+    color: #374151;
+}
+
+
+/* Member Actions */
+
+.member-actions {
+    display: flex;
+
+    gap: 8px;
+
+    margin-top: 15px;
+}
+
+.member-actions .btn {
+    margin: 0;
+}
+
+.member-actions .edit-btn {
+    background-color: #222;
+}
+
+.member-actions .delete-btn {
+    background-color: #b00020;
+}
+
+
+/* Empty Members */
+
+.empty-members {
+    grid-column: 1 / -1;
+
+    padding: 50px 20px;
+
+    text-align: center;
+
+    background: white;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 14px;
+}
+
+.empty-members .empty-icon {
+    font-size: 35px;
+}
+
+.empty-members h2 {
+    margin: 12px 0 5px;
+
+    color: #1f2937;
+}
+
+.empty-members p {
+    margin: 0;
+
+    color: #6b7280;
+}
+
+
+/* =========================
+   Members Responsive
+========================= */
+
+@media (max-width: 1000px) {
+
+    .member-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+@media (max-width: 700px) {
+
+    .member-summary {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 15px;
+    }
+
+    .member-list {
+        grid-template-columns: 1fr;
+    }
+
+}
+/* =========================
+   Borrowed Books Header
+========================= */
+
+.borrow-header {
+    margin-bottom: 25px;
+}
+
+.borrow-header .page-label {
+    margin: 0 0 8px;
+
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+
+    color: #6b7280;
+}
+
+.borrow-header h1 {
+    margin: 0 0 8px;
+
+    font-size: 34px;
+
+    color: #1f2937;
+}
+
+.borrow-header .page-subtitle {
+    margin: 0;
+
+    font-size: 16px;
+
+    color: #6b7280;
+}
+
+
+/* =========================
+   Borrow Summary
+========================= */
+
+.borrow-summary {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 18px 20px;
+
+    margin-bottom: 25px;
+
+    background: white;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 12px;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.borrow-count {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+.borrow-count .summary-icon {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background-color: #f1f5f9;
+
+    font-size: 20px;
+}
+
+.borrow-count strong {
+    display: block;
+
+    font-size: 18px;
+
+    color: #1f2937;
+}
+
+.borrow-count span {
+    display: block;
+
+    margin-top: 2px;
+
+    font-size: 13px;
+
+    color: #6b7280;
+}
+
+.issue-book-btn {
+    margin: 0;
+
+    white-space: nowrap;
+}
+
+
+/* =========================
+   Borrow Cards
+========================= */
+
+.borrow-list {
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 20px;
+
+    margin-top: 0;
+}
+
+.borrow-card {
+    background: white;
+
+    padding: 24px;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 14px;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.borrow-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+}
+
+
+/* Borrow Card Header */
+
+.borrow-card-header {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 14px;
+
+    margin-bottom: 20px;
+}
+
+.borrow-icon {
+    width: 46px;
+    height: 46px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background-color: #f1f5f9;
+
+    font-size: 20px;
+}
+
+.borrow-card h2 {
+    margin: 0 0 5px;
+
+    font-size: 20px;
+
+    color: #1f2937;
+}
+
+.borrow-member {
+    margin: 0;
+
+    font-size: 14px;
+
+    color: #6b7280;
+}
+
+
+/* Borrow Details */
+
+.borrow-details {
+    padding: 15px 0;
+
+    border-top: 1px solid #f1f5f9;
+
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.borrow-details p {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin: 8px 0;
+
+    font-size: 13px;
+
+    color: #6b7280;
+}
+
+.borrow-details strong {
+    color: #374151;
+}
+
+
+/* =========================
+   Borrow Status
+========================= */
+
+.borrow-status {
+    margin-top: 15px;
+
+    margin-bottom: 15px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+.borrow-status.returned {
+    color: #15803d;
+}
+
+.borrow-status.active {
+    color: #b45309;
+}
+
+
+/* Return Button */
+
+.return-btn {
+    margin: 0;
+}
+
+
+/* Empty Borrow Records */
+
+.empty-borrow {
+    grid-column: 1 / -1;
+
+    padding: 50px 20px;
+
+    text-align: center;
+
+    background: white;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 14px;
+}
+
+.empty-borrow .empty-icon {
+    font-size: 35px;
+}
+
+.empty-borrow h2 {
+    margin: 12px 0 5px;
+
+    color: #1f2937;
+}
+
+.empty-borrow p {
+    margin: 0;
+
+    color: #6b7280;
+}
+
+
+/* =========================
+   Borrow Responsive
+========================= */
+
+@media (max-width: 1000px) {
+
+    .borrow-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+@media (max-width: 700px) {
+
+    .borrow-summary {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 15px;
+    }
+
+    .borrow-list {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+.borrow-summary {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.borrow-summary .issue-book-btn {
+    margin-left: auto;
+}
+
+/* =========================
+   Delete Book Page
+========================= */
+
+.delete-page {
+    max-width: 650px;
+    margin: 20px auto 0;
+}
+
+.delete-page .page-label {
+    margin: 0 0 12px;
+
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+
+    color: #6b7280;
+}
+
+.delete-card {
+    background: white;
+
+    padding: 40px;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+
+    text-align: center;
+}
+
+.delete-icon {
+    width: 52px;
+    height: 52px;
+
+    margin: 0 auto 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background-color: #fef2f2;
+
+    color: #b00020;
+
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.delete-card h1 {
+    margin: 0 0 10px;
+
+    font-size: 28px;
+
+    color: #1f2937;
+}
+
+.delete-message {
+    margin: 0 0 20px;
+
+    font-size: 15px;
+
+    color: #6b7280;
+}
+
+.delete-book-info {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+    padding: 18px;
+
+    margin-bottom: 15px;
+
+    background-color: #f8fafc;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 10px;
+}
+
+.delete-book-info strong {
+    font-size: 18px;
+
+    color: #1f2937;
+}
+
+.delete-book-info span {
+    font-size: 14px;
+
+    color: #6b7280;
+}
+
+.delete-warning {
+    margin: 0 0 25px;
+
+    font-size: 13px;
+
+    color: #b00020;
+}
+
+.delete-actions {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 10px;
+}
+
+.confirm-delete-btn,
+.cancel-delete-btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-width: 110px;
+
+    padding: 10px 18px;
+
+    border-radius: 6px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    cursor: pointer;
+}
+
+.confirm-delete-btn {
+    border: none;
+
+    background-color: #b00020;
+
+    color: white;
+}
+
+.confirm-delete-btn:hover {
+    background-color: #8f0019;
+}
+
+.cancel-delete-btn {
+    background-color: #f3f4f6;
+
+    border: 1px solid #d1d5db;
+
+    color: #374151;
+}
+
+.cancel-delete-btn:hover {
+    background-color: #e5e7eb;
+}
+
+
+/* Delete Page - Mobile */
+
+@media (max-width: 600px) {
+
+    .delete-page {
+        margin-top: 10px;
+    }
+
+    .delete-card {
+        padding: 30px 20px;
+    }
+
+    .delete-actions {
+        flex-direction: column;
+    }
+
+    .confirm-delete-btn,
+    .cancel-delete-btn {
+        width: 100%;
+    }
+
+}

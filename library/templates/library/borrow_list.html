@@ -1,0 +1,145 @@
+{% extends 'library/base.html' %}
+
+{% block title %}
+Borrowed Books
+{% endblock %}
+
+{% block content %}
+
+<div class="borrow-header">
+
+    <p class="page-label">LIBRARY BORROWING</p>
+
+    <h1>Borrowed Books</h1>
+
+    <p class="page-subtitle">
+        Track books that have been issued and returned.
+    </p>
+
+</div>
+
+
+<div class="borrow-summary">
+
+    <div class="borrow-count">
+
+        <div class="summary-icon">
+            📚
+        </div>
+
+        <div>
+            <strong>{{ total_borrows }}</strong>
+            <span>Borrowing Records</span>
+        </div>
+
+    </div>
+
+
+    <div class="borrow-count">
+
+        <div class="summary-icon">
+            ↩
+        </div>
+
+        <div>
+            <strong>{{ returned_books }}</strong>
+            <span>Returned Books</span>
+        </div>
+
+    </div>
+
+
+    <a href="{% url 'issue_book' %}" class="btn issue-book-btn">
+        + Issue Book
+    </a>
+
+</div>
+
+
+<div class="borrow-list">
+
+    {% for borrow in borrows %}
+
+        <div class="borrow-card">
+
+            <div class="borrow-card-header">
+
+                <div class="borrow-icon">
+                    📖
+                </div>
+
+                <div>
+                    <h2>{{ borrow.book.title }}</h2>
+
+                    <p class="borrow-member">
+                        {{ borrow.member.name }}
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="borrow-details">
+
+                <p>
+                    <strong>Borrowed</strong>
+                    <span>{{ borrow.borrowed_date }}</span>
+                </p>
+
+
+                {% if borrow.returned_date %}
+
+                    <p>
+                        <strong>Returned</strong>
+                        <span>{{ borrow.returned_date }}</span>
+                    </p>
+
+                {% endif %}
+
+            </div>
+
+
+            {% if borrow.returned_date %}
+
+                <div class="borrow-status returned">
+                    ● Returned
+                </div>
+
+            {% else %}
+
+                <div class="borrow-status active">
+                    ● Currently Borrowed
+                </div>
+
+                <a
+                    href="{% url 'return_book' borrow.id %}"
+                    class="btn return-btn"
+                >
+                    Return Book
+                </a>
+
+            {% endif %}
+
+        </div>
+
+    {% empty %}
+
+        <div class="empty-borrow">
+
+            <div class="empty-icon">
+                📚
+            </div>
+
+            <h2>No borrowing records</h2>
+
+            <p>
+                Issue a book to a member to create a borrowing record.
+            </p>
+
+        </div>
+
+    {% endfor %}
+
+</div>
+
+{% endblock %}

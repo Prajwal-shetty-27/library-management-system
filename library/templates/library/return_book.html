@@ -1,0 +1,37 @@
+{% extends 'library/base.html' %}
+
+{% block title %}
+Return Book
+{% endblock %}
+
+{% block content %}
+
+<div class="form-container">
+
+    <h1>Return Book</h1>
+
+    <p>
+        Are you sure you want to return:
+        <strong>{{ borrow.book.title }}</strong>?
+    </p>
+
+    <p>
+        Borrowed by:
+        <strong>{{ borrow.member.name }}</strong>
+    </p>
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <button type="submit" class="btn">
+            Confirm Return
+        </button>
+
+        <a href="{% url 'borrow_list' %}" class="btn">
+            Cancel
+        </a>
+    </form>
+
+</div>
+
+{% endblock %}

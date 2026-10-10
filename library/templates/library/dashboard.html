@@ -1,0 +1,131 @@
+{% extends 'library/base.html' %}
+
+{% block title %}
+Dashboard
+{% endblock %}
+
+{% block content %}
+
+<div class="dashboard-header">
+
+    <div>
+        <p class="dashboard-label">LIBRARY MANAGEMENT</p>
+        <h1>Library Dashboard</h1>
+        <p class="dashboard-subtitle">
+            Manage your books, members, and borrowing activity from one place.
+        </p>
+    </div>
+
+</div>
+
+
+<div class="dashboard">
+
+    <div class="card total-books">
+        <div class="card-icon">📚</div>
+
+        <div class="card-content">
+            <h2>Total Books</h2>
+            <p>{{ total_books }}</p>
+            <span>Books in library</span>
+        </div>
+    </div>
+
+
+    <div class="card available-books">
+        <div class="card-icon">✓</div>
+
+        <div class="card-content">
+            <h2>Available Books</h2>
+            <p>{{ available_books }}</p>
+            <span>Ready to borrow</span>
+        </div>
+    </div>
+
+
+    <div class="card borrowed-books">
+        <div class="card-icon">↗</div>
+
+        <div class="card-content">
+            <h2>Borrowed Books</h2>
+            <p>{{ borrowed_books }}</p>
+            <span>Currently borrowed</span>
+        </div>
+    </div>
+
+
+    <div class="card total-members">
+        <div class="card-icon">👥</div>
+
+        <div class="card-content">
+            <h2>Total Members</h2>
+            <p>{{ total_members }}</p>
+            <span>Registered members</span>
+        </div>
+    </div>
+
+</div>
+
+
+<div class="quick-actions">
+
+    <div class="section-heading">
+        <h2>Quick Actions</h2>
+        <p>Common library operations</p>
+    </div>
+
+
+    <div class="action-grid">
+
+        <a href="{% url 'book_list' %}" class="action-card">
+            <div class="action-icon">📚</div>
+
+            <div>
+                <h3>Manage Books</h3>
+                <p>Add, edit, search or delete books</p>
+            </div>
+
+            <span class="action-arrow">→</span>
+        </a>
+
+
+        <a href="{% url 'member_list' %}" class="action-card">
+            <div class="action-icon">👥</div>
+
+            <div>
+                <h3>Manage Members</h3>
+                <p>View and manage library members</p>
+            </div>
+
+            <span class="action-arrow">→</span>
+        </a>
+
+
+        <a href="{% url 'borrow_list' %}" class="action-card">
+            <div class="action-icon">📖</div>
+
+            <div>
+                <h3>Borrowed Books</h3>
+                <p>Track issued and returned books</p>
+            </div>
+
+            <span class="action-arrow">→</span>
+        </a>
+
+
+        <a href="{% url 'issue_book' %}" class="action-card">
+            <div class="action-icon">+</div>
+
+            <div>
+                <h3>Issue a Book</h3>
+                <p>Issue an available book to a member</p>
+            </div>
+
+            <span class="action-arrow">→</span>
+        </a>
+
+    </div>
+
+</div>
+
+{% endblock %}

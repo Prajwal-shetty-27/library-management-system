@@ -1,0 +1,29 @@
+{% extends 'library/base.html' %}
+
+{% block title %}
+Issue Book
+{% endblock %}
+
+{% block content %}
+
+<div class="form-container">
+
+    <h1>Issue Book</h1>
+
+    <form method="POST">
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+        <button type="submit" class="btn">
+            Issue Book
+        </button>
+
+        <a href="{% url 'borrow_list' %}" class="btn">
+            Back to Borrowed Books
+        </a>
+    </form>
+
+</div>
+
+{% endblock %}

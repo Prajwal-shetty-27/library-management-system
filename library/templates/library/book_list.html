@@ -1,0 +1,145 @@
+{% extends 'library/base.html' %}
+
+{% block title %}
+Books
+{% endblock %}
+
+{% block content %}
+
+<div class="page-header">
+
+    <div>
+        <p class="page-label">LIBRARY MANAGEMENT</p>
+
+        <h1>Library Books</h1>
+
+        <p class="page-subtitle">
+            Manage and search your library collection.
+        </p>
+    </div>
+
+</div>
+
+
+<form method="GET" class="search-form">
+
+    <div class="search-box">
+
+        <input
+            type="text"
+            name="q"
+            placeholder="Search books by title or author..."
+            value="{{ request.GET.q }}"
+        >
+
+        <button type="submit">
+            Search
+        </button>
+
+        <a href="{% url 'add_book' %}" class="btn add-book-btn">
+            + Add Book
+        </a>
+
+    </div>
+
+</form>
+
+
+<div class="book-list">
+
+    {% for book in books %}
+
+        <div class="book-card">
+
+            <div class="book-card-header">
+
+                <div class="book-icon">
+                    📚
+                </div>
+
+                <div>
+                    <h2>{{ book.title }}</h2>
+
+                    <p class="book-author">
+                        {{ book.author }}
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="book-details">
+
+                <p>
+                    <strong>ISBN</strong>
+                    <span>{{ book.isbn }}</span>
+                </p>
+
+                <p>
+                    <strong>Published</strong>
+                    <span>{{ book.published_date }}</span>
+                </p>
+
+            </div>
+
+
+            <div class="book-status">
+
+                {% if book.available %}
+
+                    <span class="status available">
+                        ● Available
+                    </span>
+
+                {% else %}
+
+                    <span class="status borrowed">
+                        ● Borrowed
+                    </span>
+
+                {% endif %}
+
+            </div>
+
+
+            <div class="book-actions">
+
+                <a
+                    href="{% url 'edit_book' book.id %}"
+                    class="btn edit-btn"
+                >
+                    Edit
+                </a>
+
+                <a
+                    href="{% url 'delete_book' book.id %}"
+                    class="btn delete-btn"
+                >
+                    Delete
+                </a>
+
+            </div>
+
+        </div>
+
+    {% empty %}
+
+        <div class="empty-books">
+
+            <div class="empty-icon">
+                📚
+            </div>
+
+            <h2>No books found</h2>
+
+            <p>
+                Try a different search or add a new book.
+            </p>
+
+        </div>
+
+    {% endfor %}
+
+</div>
+
+{% endblock %}

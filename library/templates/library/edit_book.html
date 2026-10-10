@@ -1,0 +1,29 @@
+{% extends 'library/base.html' %}
+
+{% block title %}
+Edit Book
+{% endblock %}
+
+{% block content %}
+
+<div class="form-container">
+
+    <h1>Edit Book</h1>
+
+    <form method="POST">
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+        <button type="submit" class="btn">
+            Update Book
+        </button>
+
+        <a href="{% url 'book_list' %}" class="btn">
+            Back to Books
+        </a>
+    </form>
+
+</div>
+
+{% endblock %}

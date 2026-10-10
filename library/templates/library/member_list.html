@@ -1,0 +1,123 @@
+{% extends 'library/base.html' %}
+
+{% block title %}
+Members
+{% endblock %}
+
+{% block content %}
+
+<div class="members-header">
+
+    <p class="page-label">LIBRARY MEMBERS</p>
+
+    <h1>Library Members</h1>
+
+    <p class="page-subtitle">
+        Manage your registered members and their contact details.
+    </p>
+
+</div>
+
+
+<div class="member-summary">
+
+    <div class="member-count">
+
+        <div class="summary-icon">
+            👥
+        </div>
+
+        <div>
+            <strong>{{ members|length }}</strong>
+            <span>Members</span>
+        </div>
+
+    </div>
+
+
+    <a href="{% url 'add_member' %}" class="btn add-member-btn">
+        + Add Member
+    </a>
+
+</div>
+
+
+<div class="member-list">
+
+    {% for member in members %}
+
+        <div class="member-card">
+
+            <div class="member-card-header">
+
+                <div class="member-icon">
+                    👤
+                </div>
+
+                <div>
+                    <h2>{{ member.name }}</h2>
+
+                    <p class="member-email">
+                        {{ member.email }}
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="member-details">
+
+                <p>
+                    <strong>Phone</strong>
+                    <span>{{ member.phone }}</span>
+                </p>
+
+                <p>
+                    <strong>Joined</strong>
+                    <span>{{ member.joined_date }}</span>
+                </p>
+
+            </div>
+
+
+            <div class="member-actions">
+
+                <a
+                    href="{% url 'edit_member' member.id %}"
+                    class="btn edit-btn"
+                >
+                    Edit
+                </a>
+
+                <a
+                    href="{% url 'delete_member' member.id %}"
+                    class="btn delete-btn"
+                >
+                    Delete
+                </a>
+
+            </div>
+
+        </div>
+
+    {% empty %}
+
+        <div class="empty-members">
+
+            <div class="empty-icon">
+                👥
+            </div>
+
+            <h2>No members found</h2>
+
+            <p>
+                Add a new member to get started.
+            </p>
+
+        </div>
+
+    {% endfor %}
+
+</div>
+
+{% endblock %}
